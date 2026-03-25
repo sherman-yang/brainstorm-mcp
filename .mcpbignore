@@ -1,0 +1,14 @@
+.claude/
+.brainstorm/
+.vscode/
+.github/
+.git/
+.mcp.json
+brainstorm.config.json
+blog-devto.md
+src/
+tsconfig.json
+*.svg
+Dockerfile
+.npmignore
+.gitignore
