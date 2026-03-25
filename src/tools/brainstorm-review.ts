@@ -58,16 +58,28 @@ export function registerBrainstormReviewTool(server: McpServer): void {
             "'focus on SQL injection risks')"
         ),
       focus: z
-        .array(
+        .union([
+          z.array(
+            z.enum([
+              "correctness",
+              "security",
+              "performance",
+              "maintainability",
+              "tests",
+            ])
+          ),
           z.enum([
             "correctness",
             "security",
             "performance",
             "maintainability",
             "tests",
-          ])
-        )
+          ]),
+        ])
         .optional()
+        .transform((val) =>
+          val ? (Array.isArray(val) ? val : [val]) : undefined
+        )
         .describe(
           "Optional: focus areas for the review. Default: all categories."
         ),
