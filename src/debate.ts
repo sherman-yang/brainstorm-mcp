@@ -365,12 +365,13 @@ export async function runSynthesis(
   synthesizerIdentifier: string,
   modelIdentifiers: string[],
   onProgress?: ProgressCallback,
-  style?: string
+  style?: string,
+  customSynthesisPrompt?: string
 ): Promise<string> {
   const log = onProgress || (() => {});
   const fullHistory = buildHistoryContext(allRounds);
 
-  const synthesisSystem = getSynthesisSystem(style);
+  const synthesisSystem = customSynthesisPrompt || getSynthesisSystem(style);
 
   const synthesisUserMessage =
     `Original topic: ${topic}\n\n${fullHistory}\n\n` +

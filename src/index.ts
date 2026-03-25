@@ -6,6 +6,8 @@ import { registerBrainstormRespondTool } from "./tools/brainstorm-respond.js";
 import { registerBrainstormCollectTool } from "./tools/brainstorm-collect.js";
 import { registerListProvidersTool } from "./tools/list-models.js";
 import { registerAddProviderTool } from "./tools/add-model.js";
+import { registerBrainstormQuickTool } from "./tools/brainstorm-quick.js";
+import { registerBrainstormReviewTool } from "./tools/brainstorm-review.js";
 import { loadProviders } from "./models.js";
 
 loadProviders();
@@ -18,6 +20,8 @@ const server = new McpServer({
 registerBrainstormTool(server);
 registerBrainstormRespondTool(server);
 registerBrainstormCollectTool(server);
+registerBrainstormQuickTool(server);
+registerBrainstormReviewTool(server);
 registerListProvidersTool(server);
 registerAddProviderTool(server);
 
