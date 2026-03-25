@@ -2,11 +2,12 @@
   "manifest_version": "0.3",
   "name": "brainstorm-mcp",
   "display_name": "Brainstorm — Multi-Model AI Debates",
-  "version": "1.0.1",
-  "description": "MCP server for multi-round AI brainstorming debates between multiple models (GPT, DeepSeek, Groq, Ollama, etc.).",
-  "long_description": "brainstorm-mcp lets your AI assistant orchestrate structured debates between multiple LLMs. Ask Claude to brainstorm a topic, and it sends the question to GPT, DeepSeek, Groq, Ollama, or any OpenAI-compatible model in parallel. Models see each other's responses across multiple rounds, refine their positions, and a synthesizer produces a final consolidated output.\n\n**Key features:**\n- Multi-round debates with cross-model critique\n- Parallel execution across all configured providers\n- Per-model timeouts — one slow model won't block others\n- Automatic context truncation for long debates\n- Cost estimation per debate\n- Resilient — one model failing doesn't abort the debate\n- Synthesizer fallback across models\n- Works with any OpenAI-compatible API (including local Ollama)",
+  "version": "1.5.1",
+  "description": "MCP server for multi-model AI brainstorming, code review, and quick perspectives. No API keys needed in hosted mode.",
+  "long_description": "brainstorm-mcp lets your AI assistant orchestrate structured debates between multiple LLMs. Ask Claude to brainstorm a topic, and it runs a multi-round debate across GPT, Gemini, DeepSeek, Groq, Ollama, or any OpenAI-compatible model.\n\n**Key features:**\n- **Hosted mode** — No API keys needed. Uses models available in your environment (Claude Opus/Sonnet/Haiku, GPT, Gemini) via sub-agents.\n- **API mode** — Direct model API calls with parallel execution.\n- **brainstorm_quick** — Instant multi-model perspectives in under 10 seconds.\n- **brainstorm_review** — Multi-model code review with structured findings, severity ratings, and verdicts.\n- **Debate styles** — Freeform, red-team (adversarial), and Socratic (probing questions).\n- **Context injection** — Ground debates in actual code, diffs, or docs.\n- **3-bullet synthesis verdicts** — Recommendation, Key Tradeoffs, Strongest Disagreement.\n- Multi-round debates with cross-model critique.\n- Resilient — one model failing doesn't abort the debate.\n- Works with any OpenAI-compatible API (including local Ollama).",
   "author": {
-    "name": "spranab",
+    "name": "Pranab",
+    "email": "developer@pranab.co.in",
     "url": "https://github.com/spranab"
   },
   "repository": {
@@ -21,14 +22,18 @@
     "brainstorming",
     "multi-model",
     "ai-debate",
+    "code-review",
     "openai",
+    "gemini",
     "deepseek",
     "groq",
     "ollama",
     "model-context-protocol",
-    "llm-tools"
+    "llm-tools",
+    "hosted-mode"
   ],
   "license": "MIT",
+  "icon": "icon.png",
   "privacy_policies": [],
   "server": {
     "type": "node",
@@ -38,12 +43,17 @@
       "args": ["-y", "brainstorm-mcp"],
       "env": {
         "OPENAI_API_KEY": "${user_config.openai_api_key}",
+        "GEMINI_API_KEY": "${user_config.gemini_api_key}",
         "DEEPSEEK_API_KEY": "${user_config.deepseek_api_key}"
       }
     }
   },
   "tools": [
-    { "name": "brainstorm", "description": "Run a multi-round brainstorming debate between configured AI models" },
+    { "name": "brainstorm", "description": "Run a multi-round brainstorming debate between AI models (API or hosted mode)" },
+    { "name": "brainstorm_quick", "description": "Get instant multi-model perspectives — parallel, no rounds, under 10 seconds" },
+    { "name": "brainstorm_review", "description": "Multi-model code review with structured findings, severity ratings, and verdict" },
+    { "name": "brainstorm_respond", "description": "Submit Claude's response in an interactive brainstorm session" },
+    { "name": "brainstorm_collect", "description": "Submit collected model responses in a hosted brainstorm session" },
     { "name": "list_providers", "description": "Show all configured providers, models, and API key status" },
     { "name": "add_provider", "description": "Dynamically add a new AI provider at runtime" }
   ],
@@ -57,7 +67,13 @@
     "openai_api_key": {
       "type": "secret",
       "title": "OpenAI API Key",
-      "description": "API key for OpenAI models (GPT-4o, etc.)",
+      "description": "API key for OpenAI models (GPT-5.4, etc.)",
+      "required": false
+    },
+    "gemini_api_key": {
+      "type": "secret",
+      "title": "Gemini API Key",
+      "description": "API key for Google Gemini models",
       "required": false
     },
     "deepseek_api_key": {

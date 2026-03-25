@@ -1,0 +1,19 @@
+# Dev config
+.mcp.json
+.vscode/
+.github/
+.claude/
+.brainstorm/
+
+# Source (dist is published)
+src/
+tsconfig.json
+brainstorm.config.json
+brainstorm.config.example.json
+
+# Dev files
+icon.svg
+blog-devto.md
+*.md
+!README.md
+!LICENSE

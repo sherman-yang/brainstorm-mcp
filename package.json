@@ -14,7 +14,8 @@
     "smithery.yaml",
     "glama.json",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "icon.png"
   ],
   "scripts": {
     "build": "tsc",
@@ -39,7 +40,7 @@
     "type": "git",
     "url": "https://github.com/spranab/brainstorm-mcp.git"
   },
-  "author": "Pranab",
+  "author": "Pranab <developer@pranab.co.in>",
   "license": "MIT",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.27.0",
