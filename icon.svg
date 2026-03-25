@@ -1,71 +1,95 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#4F46E5"/>
-      <stop offset="100%" stop-color="#7C3AED"/>
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="100%" style="stop-color:#16213e"/>
     </linearGradient>
-    <linearGradient id="bubble1" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
-      <stop offset="100%" stop-color="#E0E7FF" stop-opacity="0.95"/>
+    <linearGradient id="brain1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#e94560"/>
+      <stop offset="100%" style="stop-color:#ff6b6b"/>
     </linearGradient>
-    <linearGradient id="bubble2" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#DDD6FE" stop-opacity="0.9"/>
+    <linearGradient id="brain2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f3460"/>
+      <stop offset="100%" style="stop-color:#4ea8de"/>
     </linearGradient>
-    <linearGradient id="bubble3" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85"/>
-      <stop offset="100%" stop-color="#C4B5FD" stop-opacity="0.85"/>
+    <linearGradient id="brain3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#533483"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
+    </linearGradient>
+    <linearGradient id="spark" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24"/>
+      <stop offset="100%" style="stop-color:#f59e0b"/>
     </linearGradient>
   </defs>
 
-  <!-- Background rounded square -->
-  <rect width="512" height="512" rx="108" ry="108" fill="url(#bg)"/>
+  <!-- Background -->
+  <rect width="512" height="512" rx="90" fill="url(#bg)"/>
 
-  <!-- Connection lines between bubbles -->
-  <line x1="185" y1="220" x2="270" y2="310" stroke="#A5B4FC" stroke-width="5" stroke-opacity="0.5"/>
-  <line x1="330" y1="200" x2="270" y2="310" stroke="#A5B4FC" stroke-width="5" stroke-opacity="0.5"/>
-  <line x1="185" y1="220" x2="330" y2="200" stroke="#A5B4FC" stroke-width="5" stroke-opacity="0.5"/>
+  <!-- Connection lines between brains -->
+  <line x1="160" y1="180" x2="350" y2="180" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
+  <line x1="160" y1="180" x2="256" y2="360" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
+  <line x1="350" y1="180" x2="256" y2="360" stroke="#ffffff" stroke-width="2" opacity="0.15"/>
 
-  <!-- Top-left bubble (Model 1) -->
-  <ellipse cx="185" cy="195" rx="88" ry="72" fill="url(#bubble1)"/>
-  <!-- Thought bubble tail -->
-  <circle cx="140" cy="275" r="14" fill="url(#bubble1)"/>
-  <circle cx="120" cy="305" r="9" fill="url(#bubble1)"/>
-  <!-- Dots representing text/thinking -->
-  <circle cx="155" cy="190" r="10" fill="#4F46E5" opacity="0.7"/>
-  <circle cx="185" cy="190" r="10" fill="#4F46E5" opacity="0.7"/>
-  <circle cx="215" cy="190" r="10" fill="#4F46E5" opacity="0.7"/>
+  <!-- Thought streams flowing to center -->
+  <circle cx="210" cy="230" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="230" cy="250" r="2.5" fill="#ffffff" opacity="0.25"/>
+  <circle cx="248" cy="265" r="2" fill="#ffffff" opacity="0.2"/>
 
-  <!-- Top-right bubble (Model 2) -->
-  <ellipse cx="340" cy="180" rx="85" ry="70" fill="url(#bubble2)"/>
-  <!-- Thought bubble tail -->
-  <circle cx="390" cy="258" r="14" fill="url(#bubble2)"/>
-  <circle cx="408" cy="288" r="9" fill="url(#bubble2)"/>
-  <!-- Dots -->
-  <circle cx="310" cy="175" r="10" fill="#7C3AED" opacity="0.7"/>
-  <circle cx="340" cy="175" r="10" fill="#7C3AED" opacity="0.7"/>
-  <circle cx="370" cy="175" r="10" fill="#7C3AED" opacity="0.7"/>
+  <circle cx="305" cy="230" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="285" cy="250" r="2.5" fill="#ffffff" opacity="0.25"/>
+  <circle cx="268" cy="265" r="2" fill="#ffffff" opacity="0.2"/>
 
-  <!-- Bottom-center bubble (Model 3) -->
-  <ellipse cx="260" cy="330" rx="92" ry="74" fill="url(#bubble3)"/>
-  <!-- Thought bubble tail -->
-  <circle cx="210" cy="405" r="14" fill="url(#bubble3)"/>
-  <circle cx="192" cy="432" r="9" fill="url(#bubble3)"/>
-  <!-- Dots -->
-  <circle cx="230" cy="325" r="10" fill="#6D28D9" opacity="0.7"/>
-  <circle cx="260" cy="325" r="10" fill="#6D28D9" opacity="0.7"/>
-  <circle cx="290" cy="325" r="10" fill="#6D28D9" opacity="0.7"/>
+  <circle cx="256" cy="330" r="3" fill="#ffffff" opacity="0.3"/>
+  <circle cx="256" cy="310" r="2.5" fill="#ffffff" opacity="0.25"/>
+  <circle cx="256" cy="292" r="2" fill="#ffffff" opacity="0.2"/>
 
-  <!-- Central spark / convergence point -->
-  <circle cx="258" cy="240" r="18" fill="#FBBF24" opacity="0.9"/>
-  <circle cx="258" cy="240" r="10" fill="#F59E0B"/>
-  <!-- Small radiating lines from spark -->
-  <line x1="258" y1="218" x2="258" y2="210" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" opacity="0.8"/>
-  <line x1="258" y1="262" x2="258" y2="270" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" opacity="0.8"/>
-  <line x1="236" y1="240" x2="228" y2="240" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" opacity="0.8"/>
-  <line x1="280" y1="240" x2="288" y2="240" stroke="#FBBF24" stroke-width="3.5" stroke-linecap="round" opacity="0.8"/>
-  <line x1="243" y1="225" x2="237" y2="219" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-  <line x1="273" y1="225" x2="279" y2="219" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-  <line x1="243" y1="255" x2="237" y2="261" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
-  <line x1="273" y1="255" x2="279" y2="261" stroke="#FBBF24" stroke-width="3" stroke-linecap="round" opacity="0.6"/>
+  <!-- Brain 1 (top-left) - Red/coral -->
+  <g transform="translate(110, 110)">
+    <ellipse cx="50" cy="40" rx="45" ry="38" fill="url(#brain1)" opacity="0.9"/>
+    <path d="M30,25 Q50,15 70,25" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.5"/>
+    <path d="M25,40 Q50,30 75,40" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M30,55 Q50,45 70,55" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.3"/>
+    <!-- Thinking bubbles -->
+    <circle cx="15" cy="5" r="4" fill="#ff6b6b" opacity="0.7"/>
+    <circle cx="5" cy="-8" r="3" fill="#ff6b6b" opacity="0.5"/>
+    <circle cx="-2" cy="-18" r="2" fill="#ff6b6b" opacity="0.3"/>
+  </g>
+
+  <!-- Brain 2 (top-right) - Blue -->
+  <g transform="translate(302, 110)">
+    <ellipse cx="50" cy="40" rx="45" ry="38" fill="url(#brain2)" opacity="0.9"/>
+    <path d="M30,25 Q50,15 70,25" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.5"/>
+    <path d="M25,40 Q50,30 75,40" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M30,55 Q50,45 70,55" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.3"/>
+    <circle cx="85" cy="5" r="4" fill="#4ea8de" opacity="0.7"/>
+    <circle cx="95" cy="-8" r="3" fill="#4ea8de" opacity="0.5"/>
+    <circle cx="102" cy="-18" r="2" fill="#4ea8de" opacity="0.3"/>
+  </g>
+
+  <!-- Brain 3 (bottom-center) - Purple -->
+  <g transform="translate(206, 300)">
+    <ellipse cx="50" cy="40" rx="45" ry="38" fill="url(#brain3)" opacity="0.9"/>
+    <path d="M30,25 Q50,15 70,25" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.5"/>
+    <path d="M25,40 Q50,30 75,40" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.4"/>
+    <path d="M30,55 Q50,45 70,55" stroke="#ffffff" stroke-width="2.5" fill="none" opacity="0.3"/>
+    <circle cx="50" cy="85" r="4" fill="#a855f7" opacity="0.7"/>
+    <circle cx="50" cy="98" r="3" fill="#a855f7" opacity="0.5"/>
+    <circle cx="50" cy="108" r="2" fill="#a855f7" opacity="0.3"/>
+  </g>
+
+  <!-- Central spark -->
+  <g transform="translate(256, 270)">
+    <circle cx="0" cy="0" r="20" fill="#fbbf24" opacity="0.15"/>
+    <circle cx="0" cy="0" r="12" fill="#fbbf24" opacity="0.25"/>
+    <polygon points="0,-14 4,-5 14,-5 6,2 9,12 0,6 -9,12 -6,2 -14,-5 -4,-5" fill="url(#spark)"/>
+    <circle cx="0" cy="0" r="4" fill="#ffffff" opacity="0.8"/>
+  </g>
+
+  <!-- Floating particles -->
+  <circle cx="130" cy="270" r="2" fill="#e94560" opacity="0.4"/>
+  <circle cx="380" cy="270" r="2" fill="#4ea8de" opacity="0.4"/>
+  <circle cx="190" cy="420" r="2" fill="#a855f7" opacity="0.4"/>
+  <circle cx="320" cy="420" r="2" fill="#fbbf24" opacity="0.4"/>
+  <circle cx="100" cy="350" r="1.5" fill="#ff6b6b" opacity="0.3"/>
+  <circle cx="410" cy="350" r="1.5" fill="#4ea8de" opacity="0.3"/>
 </svg>
