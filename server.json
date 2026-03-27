@@ -6,12 +6,12 @@
     "url": "https://github.com/spranab/brainstorm-mcp",
     "source": "github"
   },
-  "version": "1.5.3",
+  "version": "1.5.4",
   "packages": [
     {
       "registryType": "npm",
       "identifier": "brainstorm-mcp",
-      "version": "1.5.3",
+      "version": "1.5.4",
       "transport": {
         "type": "stdio"
       },
