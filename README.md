@@ -1,3 +1,4 @@
+<!-- mcp-name: io.github.spranab/brainstorm-mcp -->
 # brainstorm-mcp
 
 [![npm](https://img.shields.io/npm/v/brainstorm-mcp)](https://www.npmjs.com/package/brainstorm-mcp)
