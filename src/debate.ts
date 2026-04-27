@@ -176,12 +176,16 @@ async function callModel(
       { role: "user", content: userMessage },
     ];
 
+    // gpt-5.x and o-series reasoning models reject non-default temperature
+    // ("Only the default (1) value is supported."). They also use
+    // max_completion_tokens instead of max_tokens. Older models (gpt-4.x
+    // etc.) still accept the temperature: 0.7 we want for brainstorm
+    // creativity. Branch accordingly.
     const response = useNewTokenParam
       ? await client.chat.completions.create(
           {
             model: model.modelId,
             messages,
-            temperature: 0.7,
             max_completion_tokens: 8192,
           },
           { signal: controller.signal }
