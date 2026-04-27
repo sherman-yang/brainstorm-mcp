@@ -9,7 +9,7 @@ import {
   ProgressCallback,
 } from "./types.js";
 
-const DEFAULT_TIMEOUT_MS = 120_000; // 2 minutes per model call
+const DEFAULT_TIMEOUT_MS = 300_000; // 5 minutes per model call (gpt-5.x reasoning models can run long on rich prompts)
 const MAX_CONTEXT_CHARS = 12_000; // truncate history per response beyond this
 
 // --- Style-aware prompt helpers ---
